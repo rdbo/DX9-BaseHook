@@ -36,6 +36,7 @@ namespace Base
 		extern mem::size_t       szEndScene;
 		extern UINT              WmKeys[0xFF];
 		extern bool              Detached;
+		extern bool              ToDetach;
 		extern bool              InitImGui;
 		extern bool              ShowMenu;
 

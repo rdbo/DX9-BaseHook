@@ -25,20 +25,14 @@ HRESULT __stdcall Base::Hooks::EndScene(LPDIRECT3DDEVICE9 pDevice)
 		ImGui::Begin("ImGui Window");
 		ImGui::Text("Test ImGUI Window");
 		if (ImGui::Button("Detach"))
-		{
-			ImGui::End();
-			ImGui::EndFrame();
-			ImGui::Render();
-			ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-			Base::Detach();
-			return Data::oEndScene(pDevice);
-		}
+			Data::ToDetach = true;
 		ImGui::End();
 	}
 
 	ImGui::EndFrame();
 	ImGui::Render();
 	ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-
+	if(Data::ToDetach)
+		Base::Detach();
 	return Data::oEndScene(pDevice);
 }

@@ -15,7 +15,7 @@ LRESULT CALLBACK Base::Hooks::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARA
 			Data::ShowMenu = !Data::ShowMenu;
 			break;
 		case Data::Keys::DetachDll:
-			Base::Detach();
+			Data::ToDetach = true;
 			break;
 		}
 	}

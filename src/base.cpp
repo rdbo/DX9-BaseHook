@@ -16,6 +16,7 @@ mem::size_t       Base::Data::szEndScene = 15;
 #endif
 UINT              Base::Data::WmKeys[0xFF];
 bool              Base::Data::Detached   = false;
+bool              Base::Data::ToDetach   = false;
 bool              Base::Data::ShowMenu   = true;
 bool              Base::Data::InitImGui  = false;
 
